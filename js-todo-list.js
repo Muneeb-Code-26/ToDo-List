@@ -3,15 +3,17 @@ let arr = [];
 function todoList(){
     const targetInput = document.querySelector('.js-1'); // this Enter your todo
     let fetchIn = targetInput.value; // the thing user typed
+    const dueDate = document.querySelector('.js-3');
+const fetchTheDueDate = dueDate.value;
+
     if(fetchIn !== ''){
-     arr.push(fetchIn); // ['the thing user typed'] it will add up to whenever he will type
+     arr.push({task:fetchIn, date:fetchTheDueDate}); // ['the thing user typed'] it will add up to whenever he will type
     }
      // const addToArr = arr.push(fetchIn); TEST IT!! 
     // console.log(arr);
     targetInput.value = '';
 let store = '' ;
-const dueDate = document.querySelector('.js-3');
-const fetchTheDueDate = dueDate.value;
+
 for(let i = 0; i < arr.length; i++){
     const checkValue =  arr[i];
     // console.log(checkValue);
