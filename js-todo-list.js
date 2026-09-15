@@ -17,7 +17,7 @@ let store = '' ;
 for(let i = 0; i < arr.length; i++){
     const checkValue =  arr[i];
     // console.log(checkValue);
-    const  theHTML = `<p>${checkValue.task}  ${checkValue.date}<button onclick="
+    const  theHTML = `<p>Task:${checkValue.task}  Date:${checkValue.date} <button onclick="
         arr.splice(${i},1);
         todoList();
     ">Delete</button></p> `;
