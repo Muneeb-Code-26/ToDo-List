@@ -1,5 +1,6 @@
 
-let arr = [];
+let arr = JSON.parse(localStorage.getItem('todos')) || [];  // becuz we dont need to declare our setItem for the LS thing we can just use getItem as to make it also [] the real thing its just like doing (2(1)+0) + (2(1)+0) = 4 Got it !!!
+todoList();
 function todoList(){
     const targetInput = document.querySelector('.js-1'); // this Enter your todo
     let fetchIn = targetInput.value; // the thing user typed
@@ -9,6 +10,7 @@ const fetchTheDueDate = dueDate.value;
     if(fetchIn !== ''){
      arr.push({task:fetchIn, date:fetchTheDueDate}); // ['the thing user typed'] it will add up to whenever he will type
     }
+    localStorage.setItem('todos', JSON.stringify(arr));
      // const addToArr = arr.push(fetchIn); TEST IT!! 
     // console.log(arr);
     targetInput.value = '';
